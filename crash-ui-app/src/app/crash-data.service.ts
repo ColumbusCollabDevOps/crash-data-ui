@@ -6,16 +6,13 @@ import { CrashData } from './crash-data';
 @Injectable()
 export class CrashDataService {
   
-  cityList: string[];
+  distOptions: number[];
   crashData: CrashData[];
   apiUrl: string;
 
   constructor(private httpClient: HttpClient) {
     this.apiUrl = "https://blahblahblahblah.io";
-    this.cityList = ['DUBLIN',
-                     'MARYSVILLE',
-                     'COLUMBUS'
-    ]
+    this.distOptions = [5,10,15,20];
 
     this.crashData = [
       {city: 'DUBLIN', year: '2014', latitude: 40.206576, longitude: -83.313268, driverAge: 25, fatalities: 0},
@@ -24,8 +21,8 @@ export class CrashDataService {
 
    }
 
-  getCityList(): string[] {
-    return this.cityList;
+  getDistOptions(): string[] {
+    return this.distOptions;
   }
 
   getCrashData(): CrashData[] {

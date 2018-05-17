@@ -22,7 +22,7 @@ export class CrashQueryComponent implements OnInit {
               private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.cityList = this.crashDataService.getCityList();
+    this.cityList = this.crashDataService.getDistOptions();
 
     this.crashData = this.crashDataService.getCrashData();
     /* Use the line below to set this.crashData when we make a actual API call */
