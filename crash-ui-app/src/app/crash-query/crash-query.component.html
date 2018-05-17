@@ -1,0 +1,52 @@
+<mat-form-field>
+  <mat-select placeholder="Crash Event City">
+    <mat-option *ngFor="let city of cityList" [value]="city">
+      {{ city }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<br>
+<div class="example-container mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef> Latitude </th>
+      <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="longitude">
+      <th mat-header-cell *matHeaderCellDef> Longitude </th>
+      <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+    </ng-container>
+
+    <!-- Driver Age Column -->
+    <ng-container matColumnDef="driverAge">
+      <th mat-header-cell *matHeaderCellDef> Driver Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.driverAge}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fatalities">
+      <th mat-header-cell *matHeaderCellDef> Fatalities </th>
+      <td mat-cell *matCellDef="let element"> {{element.fatalities}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
