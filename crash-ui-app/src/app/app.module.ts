@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -30,7 +31,8 @@ import { CrashQueryComponent } from './crash-query/crash-query.component';
     MatFormFieldModule,
     MatSelectModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
   ],
   providers: [
     CrashDataService

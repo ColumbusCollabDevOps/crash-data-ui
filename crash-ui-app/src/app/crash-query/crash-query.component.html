@@ -1,13 +1,23 @@
-<mat-form-field>
-  <mat-select placeholder="Crash Event Radius">
-    <mat-option *ngFor="let city of cityList" [value]="city">
-      {{ city }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<form class="input-container">
+  <mat-form-field>
+    <input matInput placeholder="Latitude" value="">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Longitude" value="">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-select placeholder="Crash Event Radius (mi)">
+      <mat-option *ngFor="let dist of distOptions" [value]="dist">
+        {{ dist }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
 <br>
 <br>
-<div class="example-container mat-elevation-z8">
+<div *ngIf="crashData.length > 0" class="example-container mat-elevation-z8">
   <table mat-table #table [dataSource]="dataSource">
 
     <!-- Position Column -->
