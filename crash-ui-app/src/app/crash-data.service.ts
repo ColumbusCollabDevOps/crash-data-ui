@@ -36,7 +36,7 @@ export class CrashDataService {
         coordinates: [ this.longitude, this.latitude]
       },
       spherical: true,
-      maxDistance: this.crashSearchRadius;
+      maxDistance: this.crashSearchRadius
     };
 
    }
@@ -58,7 +58,7 @@ export class CrashDataService {
   //getCrashData(): Observable<CrashDataResponse> {
   getCrashData(): CrashData[] {
     return this.crashData;
-    // return this.http.post<CrashDataRequest>(this.apiUrl, this.crashDataRequest);
+    // return this.http.get<CrashDataRequest>(this.apiUrl);
   }
 
 }
