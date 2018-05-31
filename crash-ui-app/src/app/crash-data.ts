@@ -1,9 +1,9 @@
 export interface CrashData {
     city: string;
-    year: string;
+    year: number;
     latitude: number;
     longitude: number;
     driverAge: number;
     fatalities: number;
 }
-  
+    

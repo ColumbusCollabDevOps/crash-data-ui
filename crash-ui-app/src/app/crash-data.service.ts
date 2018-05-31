@@ -17,7 +17,7 @@ export class CrashDataService {
   apiUrl: string;
   crashDataDataRequest: CrashDataRequest;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private http: HttpClient) {
     this.apiUrl = "https://6iqb7rxtrk.execute-api.us-east-2.amazonaws.com/Prod/";
     this.latitude = 0;
     this.longitude = 0;
@@ -25,8 +25,8 @@ export class CrashDataService {
     this.distOptions = [1, 5, 10, 15, 20];
 
     this.crashData = [
-      {city: 'DUBLIN', year: '2014', latitude: 40.206576, longitude: -83.313268, driverAge: 25, fatalities: 0},
-      {city: 'DUBLIN', year: '2014', latitude: 40.206576, longitude: -83.313268, driverAge: 95, fatalities: 0}
+      {city: 'DUBLIN', year: 2014, latitude: 40.206576, longitude: -83.313268, driverAge: 25, fatalities: 0},
+      {city: 'DUBLIN', year: 2014, latitude: 40.206576, longitude: -83.313268, driverAge: 95, fatalities: 0}
     ];
 
     this.crashDataDataRequest = {
@@ -55,10 +55,10 @@ export class CrashDataService {
   }
 
   //Uncomment line below to return observable
-  //getCrashData(): Observable<CrashDataResponse> {
-  getCrashData(): CrashData[] {
-    return this.crashData;
-    // return this.http.get<CrashDataRequest>(this.apiUrl);
+  getCrashData(): Observable<CrashDataResponse> {
+  // getCrashData(): CrashData[] {
+    // return this.crashData;
+    return this.http.get<CrashDataResponse>(this.apiUrl);
   }
 
 }
